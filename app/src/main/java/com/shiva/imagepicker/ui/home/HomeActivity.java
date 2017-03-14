@@ -23,12 +23,10 @@ public class HomeActivity extends BaseActivity implements HomeView {
     HomePresenter homePresenter;
 
     @Override
-    public void addSelectAndCaptureImageView(SelectDocumentAndCaptureImageListener selectDocumentAndCaptureImageListener) {
-        SelectAndCaptureImageFragment selectAndCaptureImageFragment = SelectAndCaptureImageFragment.newInstance();
+    public void setSelectDocumentAndCaptureImageListener(SelectDocumentAndCaptureImageListener selectDocumentAndCaptureImageListener) {
+        SelectAndCaptureImageFragment selectAndCaptureImageFragment = (SelectAndCaptureImageFragment) getSupportFragmentManager()
+            .findFragmentById(R.id.fragment_SelectAndCaptureImageFragment);
         selectAndCaptureImageFragment.setSelectDocumentAndCaptureImageListener(selectDocumentAndCaptureImageListener);
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fl_select_and_capture_image_container, selectAndCaptureImageFragment);
-        transaction.commit();
     }
 
     @Override

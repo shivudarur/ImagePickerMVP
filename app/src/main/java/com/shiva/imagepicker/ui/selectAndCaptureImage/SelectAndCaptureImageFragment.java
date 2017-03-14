@@ -57,10 +57,6 @@ public class SelectAndCaptureImageFragment extends BaseFragment implements Prese
 
     private SelectDocumentAndCaptureImageListener selectDocumentAndCaptureImageListener;
 
-    public static SelectAndCaptureImageFragment newInstance() {
-        return new SelectAndCaptureImageFragment();
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_select_and_capture_image, container, false);
@@ -158,7 +154,6 @@ public class SelectAndCaptureImageFragment extends BaseFragment implements Prese
         }
     }
 
-
     @Override
     protected void initializeDagger() {
         App app = (App) getActivity().getApplication();
@@ -175,7 +170,6 @@ public class SelectAndCaptureImageFragment extends BaseFragment implements Prese
     public int getLayoutId() {
         return R.layout.fragment_select_and_capture_image;
     }
-
 
     public interface SelectDocumentAndCaptureImageListener {
         void onImageCaptured(String imageFilePath);
