@@ -8,7 +8,7 @@ import com.shiva.imagepicker.ui.selectAndCaptureImage.SelectAndCaptureImageFragm
  */
 
 public interface HomeView extends Presenter.View {
-    void addSelectAndCaptureImageView(SelectDocumentAndCaptureImageListener selectDocumentAndCaptureImageListener);
+    void setSelectDocumentAndCaptureImageListener(SelectDocumentAndCaptureImageListener selectDocumentAndCaptureImageListener);
 
     void showError(String errorMessage);
 }

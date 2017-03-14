@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.shiva.imagepicker.ui.base.Presenter;
 import com.shiva.imagepicker.ui.selectAndCaptureImage.SelectAndCaptureImageFragment.SelectDocumentAndCaptureImageListener;
+import com.shiva.imagepicker.util.Constant;
 
 import javax.inject.Inject;
 
@@ -21,24 +22,24 @@ public class HomePresenter extends Presenter<HomeView> {
     @Override
     public void initialize(Bundle extras) {
         super.initialize(extras);
-        view.addSelectAndCaptureImageView(selectDocumentAndCaptureImageListener);
+        view.setSelectDocumentAndCaptureImageListener(selectDocumentAndCaptureImageListener);
     }
 
     private final SelectDocumentAndCaptureImageListener selectDocumentAndCaptureImageListener = new SelectDocumentAndCaptureImageListener() {
 
         @Override
         public void onImageCaptured(String imageFilePath) {
-            //notifyDocumentSelection(new DocumentModel(imageFilePath, true));
+            //notifyDocumentSelection
         }
 
         @Override
         public void onImageSelectedFromGallery(Uri uri) {
-            //notifyDocumentSelection(new DocumentModel(uri, true));
+            //notifyDocumentSelection
         }
 
         @Override
         public void onError() {
-            view.showError("ERROR_MESSAGE_UNKNOWN");
+            view.showError(Constant.ERROR_MESSAGE_UNKNOWN);
         }
     };
 }
